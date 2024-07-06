@@ -102,7 +102,7 @@ ${generatePeriodsAndBets(startPeriod, 7)}*REGISTER HERE*:
     },
     {
         type: 'photo',
-        file: 'teks5.jpg',
+        file: 'teks2.jpg',
         caption: (date, time, cashOut) => {
             const cashOutValue = (Math.random() * (5.90 - 1.00) + 1.00).toFixed(2);
             return `*‼️AVIATOR SYSTEM PREDICTION‼️*
@@ -182,7 +182,7 @@ ${generatePeriodsAndBets(startPeriod, 7)}*REGISTER HERE*:
     },
     {
         type: 'photo',
-        file: 'IMG_20240703_125850_633.jpg',
+        file: 'teks9.jpg',
         caption: `🔥 *WINSTREAK BONUS WITH A BET OF ₹10-99* 🔥
 
 ⚡️ लगातार 5 जीतें और पाएं ₹ 20
