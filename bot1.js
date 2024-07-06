@@ -27,7 +27,7 @@ bot.getMe().then(me => {
 
 // Function to generate deeplink URL
 function generateDeeplink(userId, mediaId) {
-  return `https://t.me/${botUsername}?start=${userId}_${mediaId}`;
+  return `https://t.me/${botUsername}?start=key_${mediaId}`;
 }
 
 // Function to check if the user is a member of the channel
@@ -35,7 +35,7 @@ async function isUserMember(chatId, userId) {
   try {
     const response = await fetch(`https://api.telegram.org/bot${token}/getChatMember?chat_id=@dagetfreenewnew&user_id=${userId}`);
     const result = await response.json();
-    return result.result.status !== 'left';
+    return result.result.status !== 'member';
   } catch (error) {
     console.error(error);
     return false;
@@ -53,7 +53,7 @@ bot.onText(/\/start/, async (msg) => {
     bot.sendMessage(chatId, `🖐🏻 Hello Admin!\n\nHere is how to use the bot:\n\n1. To add media or text, send /add followed by the media or text.\n\n2. You will receive a deeplink to access the media or text.\n\n3. Only users who have joined the @dagetfreenewnew channel can access the media or text through the deeplink.`, {
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Channel", url: "https://t.me/hiyaok" }]
+          [{ text: "Channel", url: "https://t.me/dagetfreenewnew" }]
         ]
       }
     });
@@ -61,7 +61,7 @@ bot.onText(/\/start/, async (msg) => {
     bot.sendMessage(chatId, `🖐🏻 Halo @${username} Join Channel Kami Yuk! 💡`, {
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Channel", url: "https://t.me/hiyaok" }]
+          [{ text: "Channel", url: "https://t.me/dagetfreenewnew" }]
         ]
       }
     });
@@ -101,7 +101,7 @@ bot.onText(/\/start (.+)/, async (msg, match) => {
   const chatId = msg.chat.id;
   const userId = msg.from.id;
   const username = msg.from.username;
-  const [adminId, mediaId] = match[1].split('_');
+  const [key, mediaId] = match[1].split('_');
   const media = mediaStore[mediaId];
 
   if (await isUserMember(chatId, userId)) {
@@ -121,8 +121,8 @@ bot.onText(/\/start (.+)/, async (msg, match) => {
     bot.sendMessage(chatId, `🖐🏻 Halo @${username} Silahkan Join Channel Kami Terlebih Dahulu`, {
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Channel", url: "https://t.me/hiyaok" }],
-          [{ text: "Try Again", callback_data: `retry_${adminId}_${mediaId}` }]
+          [{ text: "Channel", url: "https://t.me/dagetfreenewnew" }],
+          [{ text: "Try Again", callback_data: `retry_key_${mediaId}` }]
         ]
       }
     });
@@ -153,8 +153,8 @@ bot.on('callback_query', async (callbackQuery) => {
     bot.sendMessage(msg.chat.id, `🖐🏻 Halo @${username} Silahkan Join Channel Kami Terlebih Dahulu`, {
       reply_markup: {
         inline_keyboard: [
-          [{ text: "Channel", url: "https://t.me/hiyaok" }],
-          [{ text: "Try Again", callback_data: `retry_${adminId}_${mediaId}` }]
+          [{ text: "Channel", url: "https://t.me/dagetfreenewnew" }],
+          [{ text: "Try Again", callback_data: `retry_key_${mediaId}` }]
         ]
       }
     });
