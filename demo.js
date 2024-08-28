@@ -18,7 +18,7 @@ const predefinedQuestions = {
   q4: 'Apa yang harus dilakukan jika ada anggota yang melanggar aturan?\n\n_Laporkan ke admin dengan mengirim pesan pribadi._',
   q5: 'Setelah bergabung dengan grup ini, apa yang harus saya lakukan?\n\nA) *Berbagi aplikasi.*\nB) *Mengobrol tentang berbagai hal yang positif.*',
   q6: 'Grup apa ini?\n\n_Ini adalah grup berbagi aplikasi yang aktif 24 jam._',
-  q7: 'Apakah ada apk yang bagus?\n\n_Pemilik grup merekomendasikan aplikasi ini. Silakan gunakan tautan ini untuk melakukan pendaftaran: [link pendaftaran](https://ecomamoni.uk/join?i=18Fazb6)_',
+  q7: 'Apakah ada apk yang bagus?\n\n_Pemilik grup merekomendasikan aplikasi ini. Silakan gunakan tautan ini untuk melakukan pendaftaran\n\nlink pendaftaran :\nhttps://ecomamoni.uk/join?i=18Fazb6)_',
   q8: 'Bisakah Anda menunjukkan bukti penarikan dana dari platform yang Anda rekomendasikan?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
   q13: 'If you offer me to work on a global platform\n\n_I\'m always open to everyone._',
   q14: 'What are the rules in this group?\n\n_The rules in this group are: no harsh, vulgar, or degrading language, no insults, sarcasm, conflicts, explicit photos, or pornographic videos. You are only allowed to share APKs and discuss positive topics._',
@@ -51,7 +51,7 @@ bot.onText(/\/start/, (msg) => {
 bot.onText(/\/bantuan/, (msg) => {
   const chatId = msg.chat.id;
   const username = msg.from.username ? '@' + msg.from.username : 'Pengguna';
-  bot.sendMessage(chatId, `halo ${username},\nberikut pertanyaan yang sering ditanyakan!`, getMainMenu());
+  bot.sendMessage(chatId, `hello ${username},\n\nindonesia :\nberikut pertanyaan yang sering ditanyakan!\n\nenglish :\nhere are frequently asked questions by users `, getMainMenu());
 });
 
 // Command admin untuk menambahkan pertanyaan
