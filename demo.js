@@ -20,9 +20,13 @@ const predefinedQuestions = {
   q6: 'Grup apa ini?\n\n_Ini adalah grup berbagi aplikasi yang aktif 24 jam._',
   q7: 'Apakah ada apk yang bagus?\n\n_Pemilik grup merekomendasikan aplikasi ini. Silakan gunakan tautan ini untuk melakukan pendaftaran\n\nlink pendaftaran :\nhttps://ecomamoni.uk/join?i=18Fazb6)_',
   q8: 'Bisakah Anda menunjukkan bukti penarikan dana dari platform yang Anda rekomendasikan?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
-  q13: 'If you offer me to work on a global platform\n\n_I\'m always open to everyone._',
-  q14: 'What are the rules in this group?\n\n_The rules in this group are: no harsh, vulgar, or degrading language, no insults, sarcasm, conflicts, explicit photos, or pornographic videos. You are only allowed to share APKs and discuss positive topics._',
-  q15: 'Is this group only for Indonesian people?\n\n_No, this group is intended for anyone, regardless of where they come from—Europe, Asia, Africa—it\'s open to everyone._'
+  q9: 'Manfaat bergabung grup ini?\n\n_Akses informasi, berbagi pengetahuan, diskusi dengan orang sejenis, dan networking._',
+  q10: 'Cara mengajukan saran?\n\n_Hubungi admin atau gunakan fitur saran yang tersedia di grup._',
+  q11: 'Topik yang boleh dibahas?\n\nTopik sesuai aturan grup. Hindari topik sensitif kecuali itu fokus grup._', 
+  q12: 'Tujuan grup ini?\n\n_Berbagi informasi, diskusi, bantuan, dan membangun komunitas dengan minat yang sama.._', 
+  q13: 'Siapa admin grup ini?\n\n_Anda bisa melihat di bawah deskripsi grup ini._', 
+  q14: 'Bolehkah saya mengirimkan link grup ini?\n\n_Cek aturan grup atau tanyakan admin terlebih dahulu._', 
+  q15: 'Apa grup ini selalu aktif?\n\n_Ya grup ini selalu aktif dan kamu bisa mengirimkan pesan apapun namun tetap mematuhi peraturan grup ini._'
 };
 
 // Fungsi pembantu untuk membuat menu utama secara dinamis
@@ -44,30 +48,30 @@ const getMainMenu = () => {
 // /start command
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'silahkan kirimkan /bantuan untuk mendapatkan jawaban dari berbagai pertanyaan anda');
+  bot.sendMessage(chatId, 'Silahkan kirimkan /bantuan untuk mendapatkan jawaban dari berbagai pertanyaan anda');
 });
 
 // /bantuan command
 bot.onText(/\/bantuan/, (msg) => {
   const chatId = msg.chat.id;
   const username = msg.from.username ? '@' + msg.from.username : 'Pengguna';
-  bot.sendMessage(chatId, `hello ${username},\n\nindonesia :\nberikut pertanyaan yang sering ditanyakan!\n\nenglish :\nhere are frequently asked questions by users `, getMainMenu());
+  bot.sendMessage(chatId, `Halo ${username},\n\nBerikut pertanyaan yang sering ditanyakan!`, getMainMenu());
 });
 
 // Command admin untuk menambahkan pertanyaan
-bot.onText(/\/addquestion/, (msg) => {
+bot.onText(/\/add/, (msg) => {
   if (!adminIds.includes(msg.from.id)) {
-    return bot.sendMessage(msg.chat.id, 'maaf, anda tidak memiliki izin untuk menambahkan pertanyaan.');
+    return bot.sendMessage(msg.chat.id, 'Maaf, anda tidak memiliki izin untuk menambahkan pertanyaan.');
   }
 
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'silahkan kirimkan pertanyaan baru:');
+  bot.sendMessage(chatId, 'Silahkan kirimkan pertanyaan baru:');
 
   // Mendengarkan pesan berikutnya sebagai pertanyaan
   bot.once('message', (qMsg) => {
     if (qMsg.text) {
       const newQuestion = qMsg.text;
-      bot.sendMessage(chatId, 'terima kasih. sekarang kirimkan jawaban untuk pertanyaan ini (Anda dapat mengirim teks atau media dengan caption):');
+      bot.sendMessage(chatId, 'Terima kasih. sekarang kirimkan jawaban untuk pertanyaan ini (Anda dapat mengirim teks atau media dengan caption):');
 
       // Mendengarkan pesan berikutnya sebagai jawaban
       bot.once('message', (aMsg) => {
@@ -81,7 +85,7 @@ bot.onText(/\/addquestion/, (msg) => {
         bot.sendMessage(chatId, 'pertanyaan dan jawaban telah ditambahkan ke daftar.', getMainMenu());
       });
     } else {
-      bot.sendMessage(chatId, 'pertanyaan tidak valid. silakan coba lagi.');
+      bot.sendMessage(chatId, 'Pertanyaan tidak valid. silakan coba lagi.');
     }
   });
 });
@@ -93,7 +97,7 @@ bot.on('callback_query', (callbackQuery) => {
   const data = callbackQuery.data;
 
   if (data === 'close') {
-    bot.editMessageText('terimakasih sudah menggunakan bot ini, senang membantu anda! jika ada hal yang belum dimengerti silahkan hubungi admin grup.', {
+    bot.editMessageText('Terimakasih sudah menggunakan bot ini, senang membantu anda! jika ada hal yang belum dimengerti silahkan hubungi admin grup.', {
       chat_id: chatId,
       message_id: message.message_id
     });
