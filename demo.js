@@ -22,7 +22,7 @@ const predefinedQuestions = {
   q8: 'Bisakah Anda menunjukkan bukti penarikan dana dari platform yang Anda rekomendasikan?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
   q9: 'Manfaat bergabung grup ini?\n\n_Akses informasi, berbagi pengetahuan, diskusi dengan orang sejenis, dan networking._',
   q10: 'Cara mengajukan saran?\n\n_Hubungi admin atau gunakan fitur saran yang tersedia di grup._',
-  q11: 'Topik yang boleh dibahas?\n\nTopik sesuai aturan grup. Hindari topik sensitif kecuali itu fokus grup._', 
+  q11: 'Topik yang boleh dibahas?\n\n_Topik sesuai aturan grup. Hindari topik sensitif kecuali itu fokus grup._', 
   q12: 'Tujuan grup ini?\n\n_Berbagi informasi, diskusi, bantuan, dan membangun komunitas dengan minat yang sama.._', 
   q13: 'Siapa admin grup ini?\n\n_Anda bisa melihat di bawah deskripsi grup ini._', 
   q14: 'Bolehkah saya mengirimkan link grup ini?\n\n_Cek aturan grup atau tanyakan admin terlebih dahulu._', 
