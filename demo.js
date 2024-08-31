@@ -19,7 +19,7 @@ const predefinedQuestions = {
   q5: 'Setelah bergabung dengan grup ini, apa yang harus saya lakukan?\n\nA) *Berbagi aplikasi.*\nB) *Mengobrol tentang berbagai hal yang positif.*',
   q6: 'Grup apa ini?\n\n_Ini adalah grup berbagi aplikasi._',
   q7: 'Apakah ada apk yang bagus?\n\n_Pemilik grup merekomendasikan aplikasi ini. Silakan gunakan tautan ini untuk melakukan pendaftaran\n\nlink pendaftaran :\nhttps://ecomamoni.uk/join?i=18Fazb6)_',
-  q8: 'Bisakah Anda menunjukkan bukti penarikan dana dari platform yang Anda rekomendasikan?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
+  q8: 'Bisakah Anda menunjukkan bukti penarikan dana?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
   q9: 'Manfaat bergabung grup ini?\n\n_Akses informasi, berbagi pengetahuan, diskusi dengan orang sejenis, dan networking._',
   q10: 'Cara mengajukan saran?\n\n_Hubungi admin atau gunakan fitur saran yang tersedia di grup._',
   q11: 'Topik yang boleh dibahas?\n\n_Topik sesuai aturan grup. Hindari topik sensitif kecuali itu fokus grup._', 
