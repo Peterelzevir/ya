@@ -13,11 +13,11 @@ const dynamicQuestions = [];
 // Pertanyaan dan jawaban yang telah ditentukan sebelumnya
 const predefinedQuestions = {
   q1: 'Bagaimana cara bergabung dengan grup ini?\n\n_Untuk bergabung, Anda hanya perlu klik tautan undangan yang telah dibagikan, atau minta admin untuk menambahkan Anda._',
-  q2: 'Apa aturan utama dalam grup ini?\n\n_Aturan utama biasanya meliputi: tidak ada spam, hormati sesama anggota, tidak ada konten SARA, dan hindari topik yang dapat memicu konflik._',
+  q2: 'Apa aturan utama dalam grup ini?\n\n_Aturan utama biasanya meliputi: tidak ada spam, hormati sesama anggota, hindari konten SARA, dan jangan membahas topik yang dapat memicu konflik. Selain itu, jangan mengirimkan link yang sama dengan yang telah dikirim oleh pemilik grup._',
   q3: 'Siapa saja admin di grup ini?\n\n_Untuk melihat daftar admin, tanyakan langsung di grup._',
   q4: 'Apa yang harus dilakukan jika ada anggota yang melanggar aturan?\n\n_Laporkan ke admin dengan mengirim pesan pribadi._',
   q5: 'Setelah bergabung dengan grup ini, apa yang harus saya lakukan?\n\nA) *Berbagi aplikasi.*\nB) *Mengobrol tentang berbagai hal yang positif.*',
-  q6: 'Grup apa ini?\n\n_Ini adalah grup berbagi aplikasi yang aktif 24 jam._',
+  q6: 'Grup apa ini?\n\n_Ini adalah grup berbagi aplikasi._',
   q7: 'Apakah ada apk yang bagus?\n\n_Pemilik grup merekomendasikan aplikasi ini. Silakan gunakan tautan ini untuk melakukan pendaftaran\n\nlink pendaftaran :\nhttps://ecomamoni.uk/join?i=18Fazb6)_',
   q8: 'Bisakah Anda menunjukkan bukti penarikan dana dari platform yang Anda rekomendasikan?\n\n_Ini adalah bukti screenshot yang bisa Anda lihat._',
   q9: 'Manfaat bergabung grup ini?\n\n_Akses informasi, berbagi pengetahuan, diskusi dengan orang sejenis, dan networking._',
