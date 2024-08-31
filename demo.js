@@ -48,7 +48,7 @@ const getMainMenu = () => {
 // /start command
 bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
-  bot.sendMessage(chatId, 'Silahkan kirimkan /bantuan untuk mendapatkan jawaban dari berbagai pertanyaan anda');
+  bot.sendMessage(chatId, 'Silakan kirimkan/bantuan untuk mendapatkan jawaban atas berbagai pertanyaan Anda');
 });
 
 // /bantuan command
