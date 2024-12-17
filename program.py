@@ -108,11 +108,21 @@ class TelegramMultiAccountInviteTool:
             verification_code = input(f"{Fore.GREEN}Enter OTP Code: {Style.RESET_ALL}")
             
             try:
-                await client.sign_in(phone_number, verification_code)
-            except Exception as login_error:
-                logger.error(f"Login failed: {login_error}")
-                print(f"{Fore.RED}✗ Login failed: {login_error}{Style.RESET_ALL}")
-                return
+    await client.sign_in(phone_number, verification_code)
+except Exception as login_error:
+    # Handle if password is required
+    if 'password' in str(login_error).lower():
+        password = input(f"{Fore.YELLOW}Enter your password: {Style.RESET_ALL}")
+        try:
+            await client.sign_in(password=password)
+        except Exception as password_error:
+            logger.error(f"Password authentication failed: {password_error}")
+            print(f"{Fore.RED}✗ Password authentication failed: {password_error}{Style.RESET_ALL}")
+            return
+    else:
+        logger.error(f"Login failed: {login_error}")
+        print(f"{Fore.RED}✗ Login failed: {login_error}{Style.RESET_ALL}")
+        return
 
             # Get user information
             me = await client.get_me()
